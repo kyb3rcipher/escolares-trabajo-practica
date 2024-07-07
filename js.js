@@ -365,6 +365,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         setTimeout(() => curpButton.style.visibility = 'hidden', 100);
                     });
 
+                    curpButton.addEventListener('mousedown', function(event) {
+                        // Prevenir que el evento de mousedown quite el foco del input
+                        event.preventDefault();
+                    });
+            
+                    // Asegurar que el botón se vuelva a ocultar después de su uso
+                    curpButton.addEventListener('click', function() {
+                        curpInput.focus(); // Retorna el foco al input CURP
+                    });
+
                 });
             } else {
                 console.error("Error al obtener datos de los alumnos");
