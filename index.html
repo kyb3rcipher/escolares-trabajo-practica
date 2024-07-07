@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica de Trabajo</title>
+    <title>Practica de Trabajo</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <h1>Practica de Trabajo</h1>
     <div class="container">
         <div id="control-tabla">
-            <div style="flex: 1;">
+            <div>
                 <label><input id="checkbox-todos" type="checkbox" onclick="mostrarTodos()"> Todos</label>
                 <label><input type="checkbox" onclick="mostrarColumnas()"> Matricula</label>
                 <label><input type="checkbox" onclick="mostrarColumnas()"> CURP</label>
@@ -24,24 +24,24 @@
             <input type="search" id="buscar" placeholder="🔍 Buscar..." oninput="buscarEnTabla(this)">
         </div>
         
-        
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Matrícula</th>
-                    <th>CURP</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Nombre</th>
-                    <th>Imagen</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aqui se insertan los dinámicamente con JS -->
-            </tbody>
-        </table>
+        <div id="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Matricula</th>
+                        <th>CURP</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aqui se insertan los dinamicamente con JS -->
+                </tbody>
+            </table>
+        </div>
     </div>
     
     <button id="registrar-button" class="boton-circular" onclick="crearFila()">+</button>

@@ -189,7 +189,7 @@ async function actualizarAlumno(id, fila) {
         
         if (!validar(curp, matricula, paterno, materno, nombre)) { return; }
 
-        // Construir la URL con los parámetros
+        // Construir la URL con los parametros
         const parametros = new URLSearchParams({
             id: id,
             curp: curp,
@@ -215,12 +215,12 @@ async function actualizarAlumno(id, fila) {
         }
     } catch (error) {
         console.error('Error al actualizar alumno:', error);
-        alert("Ocurrió un error al intentar actualizar el alumno.");
+        alert("Ocurrio un error al intentar actualizar el alumno.");
     }
 }
 
 function eliminarAlumno(id, fila) {
-    if (confirm("¿Estás seguro de que quieres eliminar a este alumno?")) {
+    if (confirm("¿Estas seguro de que quieres eliminar a este alumno?")) {
         fetch((apiURL + `/eliminar?id=${id}`), {
             method: 'DELETE'
         }).then(response => response.json()).then(result => {
@@ -228,10 +228,10 @@ function eliminarAlumno(id, fila) {
             fila.remove();
         }).catch(error => {
             console.error('Error al eliminar alumno:', error);
-            alert("Ocurrió un error al intentar eliminar el alumno.");
+            alert("Ocurrio un error al intentar eliminar el alumno.");
         });
     } else {
-        alert("La eliminación del alumno ha sido cancelada.");
+        alert("La eliminacion del alumno ha sido cancelada.");
     }
 }
 
@@ -241,7 +241,7 @@ function registrarEstudiante(button) {
 
     if (!validar(curp, matricula, paterno, materno, nombre)) { return; }
 
-    // Construye la URL con los parámetros
+    // Construye la URL con los parametros
     const parametros = new URLSearchParams({
         curp: curp,
         matricula: matricula,
@@ -265,7 +265,7 @@ function registrarEstudiante(button) {
         }
     }).catch(error => {
         console.error('Error al enviar los datos:', error);
-        alert("Ocurrió un error al intentar agregar el estudiante.");
+        alert("Ocurrio un error al intentar agregar el estudiante.");
     });
 }
 
@@ -288,7 +288,7 @@ function crearFila() {
     fila.innerHTML = `
         <td><input type="text" name="matricula" placeholder="Matricula"></td>
         <td>
-            <div class="input-container">
+            <div class="generador-curp">
                 <input type="text" name="curp" placeholder="CURP">
                 <button class="boton-circular" id="boton-generar-curp" onclick="generarCURP(this)">↻</button>
             </div>
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     fila.innerHTML = `
                         <td title="Fecha de creacion: ${alumno.creado} \n Fecha de modificacion: ${alumno.modificado}"><input type="text" name="matricula" value="${alumno.matricula}"></td>
                         <td>
-                            <div class="input-container">
+                            <div class="generador-curp">
                                 <input type="text" name="curp" value="${alumno.curp}">
                                 <button class="boton-circular" id="boton-generar-curp" onclick="generarCURP(this)" style="visibility: hidden;">↻</button>
                             </div>
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         event.preventDefault();
                     });
             
-                    // Asegurar que el botón se vuelva a ocultar después de su uso
+                    // Asegurar que el boton se vuelva a ocultar después de su uso
                     curpButton.addEventListener('click', function() {
                         curpInput.focus(); // Retorna el foco al input CURP
                     });
