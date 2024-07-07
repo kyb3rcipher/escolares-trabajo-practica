@@ -26,6 +26,15 @@ h1 {
     margin: .7em 0;
 }
 
+a:link, a:visited, a:active, a {
+    color: #367BF0;
+    font-weight: bold;
+}
+
+a:link:hover, a:visited:hover, a:active:hover, a:hover {
+    text-decoration: underline
+}
+
 .container {
     width: auto;
     max-width: 100%;
