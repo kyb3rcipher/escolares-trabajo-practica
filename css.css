@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
+
+* {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0;
+}
+
+body {
+    color: #5C616C;
+    background-color: #FAFAFA;
+    margin: 0;
+    font-size: 13px;
+}
+
+main {
+    margin: 30px;
+}
+
+h1 {
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 4em;
+    font-weight: lighter;
+    margin: .7em 0;
+}
+
+.container {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+#control-tabla {
+    display: flex;
+    align-items: center;
+}
+
+#buscar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #F2F2F2;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #DDD;
+}
+
+
+#registrar-button {
+    position: sticky;
+    right: 20px;
+    bottom: 20px;
+    margin-left: auto;
+}
+
+
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.input-container input {
+    padding-right: 55px;
+}
+
+#registrar-estudiante {
+    display: flex;
+    position: sticky;
+    top: 10px;  
+    align-items: center;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+#registrar-estudiante input {
+    margin-right: 10px;
+}
+
+#boton-generar-curp {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 35px;
+    width: 35px; 
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+}
+
+/************* INPUTS *************/
+input::placeholder {
+    opacity: 1;
+    transition: opacity .2s;
+    color: inherit;
+}
+
+input:focus::placeholder {
+    opacity: .2;
+}
+
+input:not([type=checkbox]) {
+    border: 2px solid black;
+    background: white;
+    color: black;
+    border-radius: 3px;
+    margin: 7px 0;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type=checkbox] {
+    font-size: 1em;
+    border: .125em solid black;
+    background: white;
+    cursor: pointer;
+    height: 1.2em;
+    width: 1.2em;
+    box-shadow: inset 0 0 0 .125em white;
+    vertical-align: text-top;
+    margin: 0 .3em;
+    padding: 0;
+    transition: background-color .2s, box-shadow .2s;
+}
+
+input[type=checkbox]:checked {
+    background: #367BF0;
+}
+
+label:hover > input[type=checkbox]:checked, label:hover > input[type=radio]:checked {
+    box-shadow: inset 0 0 0 0.1875em white;
+}
+
+label:hover > input[type=checkbox]:not(:checked), label:hover > input[type=radio]:not(:checked) {
+    background: #B8174C;
+}
+
+input[type=checkbox] {
+    border-radius: .1875em;
+}
+
+
+button, .boton-azul, .boton-rojo, .boton-verde {
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    margin-top: 7px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    height: 45px;
+    width: 120px;
+    border: 3px solid #272A34;
+    background: #737680;
+    line-height: 40px;
+    display: block;
+    transition: border .2s .2s, text-shadow .2s .2s, background .2s .2s, transform .2s, color .2s .2s, box-shadow .2s;
+    text-transform: capitalize;
+}
+
+.boton-circular {
+    border: none;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0, .14), 0 3px 1px -2px rgba(0,0,0, .2), 0 1px 5px 0 rgba(0,0,0, .12);
+    text-shadow: 0 0 1px;
+    border-radius: 100%;
+    font-size: 35px;
+    line-height: 56px;
+    text-align: center;
+    color: white;
+    background: #8C42Ab;
+    font-weight: 100;
+    display: block;
+    transition: text-shadow .2s .2s, background .2s .2s, transform .2s, color .2s .2s, box-shadow .2s;
+}
+
+.boton-circular:hover { transform: scale(1.04); }
+
+button:hover, .boton-azul:hover, .boton-rojo:hover, .boton-verde:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0, .14), 0 3px 1px -2px rgba(0,0,0, .2), 0 1px 5px 0 rgba(0,0,0, .12);
+}
+
+button:active, button.active,
+.boton-azul:active, .boton-azul.active,
+.boton-rojo:active, .boton-rojo.active,
+.boton-verde:active, .boton-verde.active,
+.boton-circular:active, .boton-circular.active {
+    box-shadow: none;
+    border-color: black;
+    color: black;
+    text-shadow: none;
+    background: white;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.boton-circular:active, .boton-circular.active { box-shadow: 0 0 10px rgba(0,0,0, .6); }
+
+.boton-azul {
+    background: #367BF0;
+    border-color: #2656A8;
+}
+
+.boton-rojo {
+    background: #B8174C;
+    border-color: #811035;
+}
+
+.boton-verde {
+    background: #19A187;
+    border-color: #12715F;
+}
